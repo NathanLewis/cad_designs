@@ -1,7 +1,10 @@
-$fn=45;
-thick=0.5;
-for(x=[1:50]) {
-	// sq = x * x;
-	translate([0,x*0.5,0])	cylinder(r=0.5,h=x*x/20);
-	translate([x*0.5,0,0])	cylinder(r=0.5,h=x*x/20);
+// octave
+// x = -2:0.1:2;
+// [xx,yy] = meshgrid(x,x);
+// z = xx.^2+yy.^2;
+// save("parabola.dat", "z");
+
+difference() {
+	surface(file = "parabola.dat", center = true);
+	cylinder(r=1.5, h=35, center=true,$fn=200);
 }
